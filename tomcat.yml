@@ -14,6 +14,4 @@
       name: tomcat7
       state: started
   - name: deploying sample war file into tomcat webapps folder
-    get_url:
-      url: https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
-      dest: /var/lib/tomcat7/webapps/
+    command:  "sudo wget https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war -P /var/lib/tomcat7/webapps/"
