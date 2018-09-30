@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: updating packages
+    apt:
+      update_cache: yes
+  - name: installing apache
+    apt:
+      name: apache2
+      state: present
+  - name: restating apache
+    service:
+      name: apache2
+      state: started
